@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
-
+from datetime import datetime
 
 def shellsort(arr):
     # 改进版的插入排序-希尔排序，最坏为O(n^2)，最好为O(n)，平均为O(n^1.3)
@@ -22,5 +22,9 @@ def shellsort(arr):
 
 if __name__ == '__main__':
     arr = [17, 28, 3, 9, 53, 34, 66, 77, 55, 25, 99]
+    time1 = datetime.now()
     shellsort(arr)
+    time2 = datetime.now()
+    timeDef = (time2 - time1).microseconds   # 单位微秒
+    print("用时：" + str(timeDef) + "微妙")
     print(arr)
