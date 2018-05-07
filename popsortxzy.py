@@ -9,23 +9,18 @@ import testdata
 # 思路，每次遍历将最小的排在前面
 
 
-def popSort(arr):
-    n = len(arr)
-    if n < 2:
-        return arr
-
-    for i in range(n):
-        for j in range(n - 1, i, -1):
-            if arr[j - 1] > arr[j]:
-                arr[j - 1], arr[j] = arr[j], arr[j - 1]
-
-    return arr
+def popsortxzy(arr):
+    length = len(arr)
+    for i in range(length):
+        for j in range(length - 1, i - 1, -1):
+            if arr[j-1] > arr[j]:
+                arr[j-1], arr[j] = arr[j], arr[j-1]
 
 
 if __name__ == '__main__':
     arr = testdata.arr2
     time1 = datetime.now()
-    popSort(arr)
+    popsortxzy(arr)
     time2 = datetime.now()
     timeDef = (time2 - time1).microseconds   # 单位微秒
     print("用时：" + str(timeDef) + "微妙")
