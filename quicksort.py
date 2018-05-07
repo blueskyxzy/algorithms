@@ -25,7 +25,7 @@ def getPartition(arr, low, high):
     for i in range(low, high):
         if arr[i] <= arr[high]:  # 保证index前面的数都比key小
             index += 1
-            arr[index], arr[i] = arr[i], arr[index]
+            arr[index], arr[i] = arr[i], arr[index]  # 把大于基准的都放到index和i之间
     arr[index + 1], arr[high] = arr[high], arr[index + 1]
 
     return index + 1
