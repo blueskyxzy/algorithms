@@ -4,7 +4,7 @@
 from datetime import datetime
 import testdata
 
-# 冒泡排序
+# 冒泡排序  交换排序的一种
 # 一般用2次for循环 0到len-1,len -1到i
 # 思路，每次遍历将最小的排在前面
 
