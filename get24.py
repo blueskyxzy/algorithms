@@ -17,25 +17,25 @@ def createexpession(y1, y2, exp, operator):
     if operator == 0:
         y = y1 + y2
         if len(exp) >= 4:
-            exp = "(" + exp + "+" + str(y2) +")"
+            exp = "(" + exp + "+" + str(y2) + ")"
         else:
-            exp = "(" + str(y1) + "+" + str(y2) +")"
+            exp = "(" + str(y1) + "+" + str(y2) + ")"
     if operator == 1:
         y = y1 - y2
         if len(exp) >= 4:
-            exp = "(" + exp + "-" + str(y2) +")"
+            exp = "(" + exp + "-" + str(y2) + ")"
         else:
             exp = "(" + str(y1) + "+" + str(y2) + ")"
     if operator == 2:
         y = y1 * y2
         if len(exp) >= 4:
-            exp = "(" + exp + "*" + str(y2) +")"
+            exp = "(" + exp + "*" + str(y2) + ")"
         else:
             exp = "(" + str(y1) + "+" + str(y2) + ")"
     if operator == 3:
         y = y1 / y2
         if len(exp) >= 4:
-            exp = "(" + exp + "/" + str(y2) +")"
+            exp = "(" + exp + "/" + str(y2) + ")"
         else:
             exp = "(" + str(y1) + "+" + str(y2) + ")"
     return y, exp
