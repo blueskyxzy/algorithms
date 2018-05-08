@@ -4,6 +4,10 @@ import random
 from datetime import datetime
 import testdata
 
+# 快速排序
+# 1.选一个基准，将小于基准的排到左边，大于基准的排到右边
+# 2.递归！！！！！
+
 
 def quickone(arr, low, high):
     index = random.randint(low, high)  # 随机基准
