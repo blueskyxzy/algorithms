@@ -32,7 +32,7 @@ def getPartition(arr, low, high):
 
 
 if __name__ == '__main__':
-    arr = testdata.arr2
+    arr = testdata.arr1
     time1 = datetime.now()
     high = len(arr)
     quickSort(arr, 0, high - 1)
