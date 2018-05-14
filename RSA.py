@@ -76,14 +76,14 @@ def generate_pbk_pvk(a, zx):      # 生成public key公钥或private key私钥
         return pvk
 
 
-def encryption(mw, ned):     # 加密
+def encryption(mw, ned):        # 加密
     # 密文B = 明文A的e次方 模 n， ned为公钥
     # mw就是明文A，ned【1】是e， ned【0】是n
     B = pow(mw, ned[1]) % ned[0]
     return B
 
 
-def decode(mw, ned):     # 解密
+def decode(mw, ned):            # 解密
     # 明文C = 密文B的d次方 模 n， ned为私钥匙
     # mw就是密文B， ned【1】是e，ned【1】是d
     C = pow(mw, ned[1]) % ned[0]
