@@ -9,8 +9,8 @@ def prime_array():             # 生成素数数组
     arraya = []
     for i in range(2, 100):    # 生成前100中的素数，从2开始因为2是最小的素数
         x = prime(i, 2)        # i为素数时返回True，则将x加入arraya数组中;2为测试值
-    if x:
-        arraya.append(i)
+        if x:
+            arraya.append(i)
     return arraya
 
 
