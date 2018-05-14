@@ -53,7 +53,7 @@ def dijkstraxzy(G, v0):
 
 
 time1 = datetime.now()
-dis = dijkstraxzy(G, v0 = 1)
+dis = dijkstraxzy(G, 1)
 time2 = datetime.now()
 timeDef = (time2 - time1).microseconds   # 单位微秒
 print("用时：" + str(timeDef) + "微妙")
