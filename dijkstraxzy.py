@@ -52,7 +52,6 @@ def dijkstraxzy(G, v0):
     return dis
 
 
-
 time1 = datetime.now()
 dis = dijkstraxzy(G, v0 = 1)
 time2 = datetime.now()
