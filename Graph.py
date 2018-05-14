@@ -6,7 +6,7 @@
 #
 # 回溯法(探索与回溯法)是一种选优搜索法，按选优条件向前搜索，以达到目标。但当探索到某一步时，发现原先选择并不优或达不到目标，就退回一步重新选择，这种走不通就退回再走的技术为回溯法，而满足回溯条件的某个状态的点称为“回溯点”。
 #
-# 深度优先算法：
+# 深度优先算法：Depth First Search
 #
 # （1）访问初始顶点v并标记顶点v已访问。
 # （2）查找顶点v的第一个邻接顶点w。
@@ -14,7 +14,7 @@
 # （4）若顶点w尚未被访问，则访问顶点w并标记顶点w为已访问。
 # （5）继续查找顶点w的下一个邻接顶点wi，如果v取值wi转到步骤（3）。直到连通图中所有顶点全部访问过为止。
 #
-# 广度优先算法：
+# 广度优先算法：Breadth First Search
 #
 # （1）顶点v入队列。
 # （2）当队列非空时则继续执行，否则算法结束。
@@ -29,26 +29,26 @@ class Graph(object):
         self.node_neighbors = {}
         self.visited = {}
 
-    def add_nodes(self,nodelist):
+    def add_nodes(self, nodelist):
 
         for node in nodelist:
             self.add_node(node)
 
-    def add_node(self,node):
-        if not node in self.nodes():
+    def add_node(self, node):
+        if node not in self.nodes():
             self.node_neighbors[node] = []
 
-    def add_edge(self,edge):
+    def add_edge(self, edge):
         u, v = edge
-        if(v not in self.node_neighbors[u]) and ( u not in self.node_neighbors[v]):
+        if(v not in self.node_neighbors[u]) and (u not in self.node_neighbors[v]):
             self.node_neighbors[u].append(v)
-            if(u != v):
+            if(u!=v):
                 self.node_neighbors[v].append(u)
 
     def nodes(self):
         return self.node_neighbors.keys()
 
-    def depth_first_search(self,root=None):
+    def depth_first_search(self, root=None):
         order = []
 
         def dfs(node):
@@ -68,12 +68,12 @@ class Graph(object):
         print order
         return order
 
-    def breadth_first_search(self,root=None):
+    def breadth_first_search(self, root=None):
         queue = []
         order = []
 
         def bfs():
-            while len(queue)> 0:
+            while len(queue) > 0:
                 node  = queue.pop(0)
 
                 self.visited[node] = True
