@@ -52,7 +52,8 @@ class Graph(object):
         order = []
 
         self.visited = {}
-        def dfs(node):
+
+        def dfs(node):                # 深度优先遍历
             self.visited[node] = True
             order.append(node)
             for n in self.node_neighbors[node]:
@@ -62,7 +63,7 @@ class Graph(object):
         if root:
             dfs(root)
 
-        for node in self.nodes():
+        for node in self.nodes():           # 没有访问过的再遍历
             if not node in self.visited:
                 dfs(node)
 
@@ -74,7 +75,7 @@ class Graph(object):
         queue = []
         order = []
 
-        def bfs():
+        def bfs():                  # 广度优先遍历
             while len(queue) > 0:
                 node  = queue.pop(0)
 
@@ -89,7 +90,7 @@ class Graph(object):
             order.append(root)
             bfs()
 
-        for node in self.nodes():
+        for node in self.nodes():        # 没有访问过的再遍历
             if not node in self.visited:
                 queue.append(node)
                 order.append(node)
