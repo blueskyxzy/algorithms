@@ -51,6 +51,7 @@ class Graph(object):
     def depth_first_search(self, root=None):
         order = []
 
+        self.visited = {}
         def dfs(node):
             self.visited[node] = True
             order.append(node)
@@ -65,10 +66,11 @@ class Graph(object):
             if not node in self.visited:
                 dfs(node)
 
-        print order
+        print(order)
         return order
 
     def breadth_first_search(self, root=None):
+        self.visited = {}
         queue = []
         order = []
 
@@ -92,7 +94,7 @@ class Graph(object):
                 queue.append(node)
                 order.append(node)
                 bfs()
-        print order
+        print(order)
 
         return order
 
